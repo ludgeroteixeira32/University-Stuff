@@ -1,2 +1,2 @@
 # University-Stuff
-Work produced during Computer Science Engineering BSc @ Universidade de Évora
+Projects produced during my Bachelor degree at Universidade de Évora. 

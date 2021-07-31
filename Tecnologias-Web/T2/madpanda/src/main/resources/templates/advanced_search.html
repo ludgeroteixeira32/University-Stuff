@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>MadPanda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="frontend/font/HortaFont.otf" type="text/css" />
+    <link rel="stylesheet" href="frontend/stylesheet.css">
+</head>
+
+
+<body class="advanced_search">
+
+    <p id="name">Mad Panda</p>
+
+    <div id="cabecalho">
+        <img src="frontend/img/madpanda.png" alt="madpanda" onclick="document.location='/index'">
+        <form th:action="@{/login}" method="post">
+            <input type="text" placeholder="Pesquisar...">
+            <input type="image" src="frontend/img/lupa.png" alt="pesquisar">
+        </form>
+        <a href="/advanced-search">Pesquisa Avançanda</a>
+    </div>
+
+
+    <div id="content">
+        <div id="produto">
+            <h1>Pesquisa Avançada</h1>
+            <p>Descrição de produto:
+                <textarea name="descricao" placeholder="Pesquise por uma descrição de produto..." rows="3" cols="150"></textarea>
+            </p>
+            <p> Categoria do produto:
+                <select name="categoria_produto">
+                <option></option>
+                <option>Tapetes</option>
+                <option>Ratos</option>
+                <option>Teclados</option>
+                <option>Cabos</option>
+                <option>Armazenamento</option>
+                </select>
+            </p>
+            <p>Intervalo de preço:
+                <textarea name="intervalo_preco" placeholder="Insira o intervalo de preço..." rows="3" cols="150"></textarea>
+            </p>
+            <p> Localização do produto:
+                <select name="localizacao_produto">
+                <option></option>
+                <option>Evora</option>             
+                <option>Leiria</option>
+                <option>Lisboa</option>
+                <option>Porto</option>
+                <option>Santarem</option>
+                </select>
+            </p>
+            <p>Data de chegada do produto:
+                <input type="date" id="data_chegada">
+            </p>
+            <p>Data em que o produto esgota:
+                <input type="date" id="data_chegada">
+            </p>
+            <input id="btn_advanced_search" type="image" src="frontend/img/lupa.png" alt="pesquisar" onclick="document.location='/search'">
+        </div>
+
+        <div id="categoria">
+            <h3>Categorias:</h3>
+            <ul>
+                <li><a href="#">Tapetes</a></li>
+                <li><a href="#">Ratos</a></li>
+                <li><a href="#">Teclados</a></li>
+                <li><a href="#">Cabos</a></li>
+                <li><a href="#">Armazenamento</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="about">
+        <a href="#">About this page...</a>
+        <p>
+    </div>
+</body>
+
+</html>

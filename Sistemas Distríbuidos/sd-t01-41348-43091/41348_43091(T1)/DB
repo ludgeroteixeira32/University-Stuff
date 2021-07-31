@@ -1,0 +1,36 @@
+/* CREATE DATABASE "SistemaDeAcompanhamentoDeVancinacao" */
+ 
+DROP TABLE IF EXISTS fila_de_espera;
+DROP TABLE IF EXISTS centros;
+DROP TABLE IF EXISTS vacinados;
+
+/* −−−−−−−−−−−−− CREATE TABLES −−−−−−−−−−−−− */
+
+CREATE TABLE centros (
+    NomeCentro varchar(50) NOT null PRIMARY KEY
+);
+
+CREATE TABLE fila_de_espera (
+	NomeCentro varchar(50) NOT null,
+    NomePessoa varchar(50) NOT null,
+	Idade int NOT null,
+	Genero varchar(50) NOT null,
+	CodigoX int NOT null PRIMARY KEY,
+	
+	CONSTRAINT NomeCentro FOREIGN KEY (NomeCentro) REFERENCES centros(NomeCentro)
+);
+
+CREATE TABLE vacinados (
+	TipoVacina varchar(50) NOT null,
+	DataVacinado date NOT null,
+	EfeitosSecundarios varchar(50) NOT null,
+	CodigoC int NOT null PRIMARY KEY
+);
+
+/* −−−−−−−−−−−−− INSERT INTO TABLES −−−−−−−−−−−−− */
+
+INSERT INTO centros VALUES ('Evora');
+INSERT INTO centros VALUES ('Lisboa');
+INSERT INTO centros VALUES ('Porto');
+INSERT INTO centros VALUES ('Faro');
+INSERT INTO centros VALUES ('Braga');

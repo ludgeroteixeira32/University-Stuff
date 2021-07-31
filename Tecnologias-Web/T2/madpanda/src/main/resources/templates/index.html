@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>MadPanda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="frontend/font/HortaFont.otf" type="text/css" />
+    <link rel="stylesheet" href="frontend/stylesheet.css">
+</head>
+
+
+<body calss="index">
+
+    <p id="name">Mad Panda</p>
+
+    <div id="cabecalho">
+        <img src="frontend/img/madpanda.png" alt="madpanda">
+        <form th:action="@{/search-product}" method="post">
+            <input type="text" th:name="name" placeholder="Pesquisar..."/>
+            <input type="image" src="frontend/img/lupa.png" alt="pesquisar">
+        </form>
+        <a th:href="@{/login}">Log In</a>
+        <form th:action="@{/logout}" method="post">
+            <input class="btn_comprar" type="submit" value="Log Out"/>
+        </form>
+        <a th:href="@{/advanced-search}">Pesquisa Avançanda</a>
+    </div>
+
+
+    <div id="content">
+        <div id="produto">
+            <p id="counter">Nº de Produtos: 5</p>
+
+            <h1>Produtos</h1>
+
+            <table>
+                <tr th:each="Product: ${HomeList}">
+                    <form th:action="@{/add-cart}" method="get">
+                        <input type="hidden" th:name="id" th:value="${Product.id}"/>
+                        <h3 th:text=" ${Product.name}"/>
+                        <img th:src="${Product.image}"/>
+                        <p th:text="${Product.details}"/>
+                        <h2 th:text="${Product.price} + '€'"/>
+                        <input class="btn_comprar" type="submit" value="Comprar"/>
+                    </form>
+                </tr>
+            </table>
+
+            <!--<button class="btn_comprar" type="button" onclick="document.location='/product'">Comprar</button><button class="btn_comprar" type="button" onclick="document.location='/product'">Comprar</button><a href="/product">
+                <h3>Steelseries QCK XXL</h3>
+                <img src="frontend/img/tapete_qck_xxl.png" alt="tapete_qck_xxl">
+            </a>
+            <p>O QcK XXL é um tapete de alto desempenho de enormes dimensões. Ele usa o mesmo material da premiada série QcK só que num tamanho muito maior.</p>
+            <h2 class="preco">39,90 €</h2>
+            <button class="btn_comprar" type="button" onclick="document.location='/product'">Comprar</button>
+
+            <a href="/product">
+                <h3>HyperX Pulsefire Dart</h3>
+                <img src="frontend/img/rato_hyperx_pulsefire_dart.png" alt="rato_hyperx_pulsefire_dart">
+            </a>
+            <p>HyperX Pulsefire Dart™ é um rato sem fio de nível de jogos com uma conexão fiável 2,4GHz RF que o fará perguntar porque esperou tanto para cortar o fio. Um adaptador sem fio está incluído para ampliar o alcance para configurações em PCs. Tem
+                certificado Qi para carregamento sem fio e pode funcionar até 50 horas com uma única carga.</p>
+            <h2 class="preco">89,90 €</h2>
+            <button class="btn_comprar" type="button" onclick="document.location='/product'">Comprar</button>
+
+            <a href="/product">
+                <h3>Logitech G703 LightSpeed</h3>
+                <img src="frontend/img/rato_logitech_g703_lightSpeed.png" alt="rato_logitech_g703_lightSpeed">
+            </a>
+            <p>O G703 LIGHTSPEED entra na próxima geração de desempenho com o avançado sensor HERO 16K. Prepare-se para rastreamento de próximo nível, LIGHTSPEED aprimorado e 10X a eficiência de energia da geração anterior. Adicione POWERPLAY para nunca
+                mais se preocupar em carregar novamente e conclua o melhor carregamento LIGHTSPEED.
+            </p>
+            <h2 class="preco">77,40 €</h2>
+            <button class="btn_comprar" type="button" onclick="document.location='/product'">Comprar</button>
+
+            <a href="/product">
+                <h3>HyperX Alloy Origins Core</h3>
+                <img src="frontend/img/teclado_hyperx_alloy_origins_core.png" alt="teclado_hyperx_alloy_origins_core">
+            </a>
+            <p>O HyperX Alloy Origins™ Core é um teclado com menos dez teclas resistente e ultracompacto com chaves de teclas mecânicas exclusivas HyperX projetado para proporcionar aos gamers a melhor combinação de estilo, desempenho e fiabilidade. Estas
+                chaves de teclas possuem LEDs aparentes para uma iluminação deslumbrante com uma força de atuação e distância de curso elegantemente equilibradas para melhor resposta e precisão.</p>
+            <h2>99,90 €</h2>
+            <button class="btn_comprar" type="button" onclick="document.location='/product'">Comprar</button>
+
+            <a href="/product">
+                <h3>Krom Kernel TKL</h3>
+                <img src="frontend/img/teclado_krom_kernel_tkl.png" alt="teclado_krom_kernel_tkl">
+            </a>
+            <p>Teclado gaming, compacto, com layout PT e teclas mecânicas Outemu Red. Iluminação em RGB 16.8 milhões de cores, e com 9 efeitos totalmente personalizáveis. Suporta funções macro e modo "anti-ghosting". Configurações ajustáveis através do teclado
+                sem necessidade de software.</p>
+            <h2>45,90 €</h2>
+            <button class="btn_comprar" type="button" onclick="document.location='/product'">Comprar</button>-->
+            <div id="paginacao">
+                <button class="btn_pagina" type="button"><<</button>
+                <button class="btn_pagina" type="button">1</button>
+                <button class="btn_pagina" type="button">2</button>
+                <button class="btn_pagina" type="button">3</button>
+                <button class="btn_pagina" type="button">4</button>
+                <button class="btn_pagina" type="button">5</button>
+                <button class="btn_pagina" type="button">>></button>
+            </div>
+        </div>
+
+
+
+        <div id="categoria">
+            <h3>Categorias:</h3>
+            <ul>
+                <li><a href="#">Tapetes</a></li>
+                <li><a href="#">Ratos</a></li>
+                <li><a href="#">Teclados</a></li>
+                <li><a href="#">Cabos</a></li>
+                <li><a href="#">Armazenamento</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="about">
+        <a href="#">About this page...</a>
+        <p>
+    </div>
+</body>
+
+</html>

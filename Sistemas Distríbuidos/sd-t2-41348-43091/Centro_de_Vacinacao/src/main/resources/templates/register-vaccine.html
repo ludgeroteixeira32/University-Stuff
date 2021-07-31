@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Centro de Vacinacao</title>
+    <link th:href="@{/public/style/index.css}" rel="stylesheet" />
+</head>
+<body>
+<h2> Registrar Vacina </h2>
+
+<form class="form-inline"  th:action="@{/register-vaccine}" method="GET">
+
+    <label for="codX">Insira o codigo X:</label><br>
+    <input type="text" id="codX" name="codX" value="codX"><br>
+
+    <label for="vaccinetype">Insira o tipo de vacina:</label><br>
+    <input type="text" id="vaccinetype" name="vaccinetype" value="vaccinetype"><br>
+
+    <label for="date">Data de vacinacao:</label><br>
+    <input type="date" id="date" name="date" value="2020-07-22" min="2020-01-01" max="2034-12-31">
+
+    <input type="submit" value="Submeter">
+</form>
+</body>
+</html>

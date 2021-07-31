@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>DGS</title>
+    <link th:href="@{/public/style/index.css}" rel="stylesheet" />
+</head>
+<body>
+    <h2> Vacinas </h2>
+
+    <p>Lista de vacinas</p>
+        <table>
+            <tr th:each="vacinetype: ${vaccinetypeList}">
+                <td th:text="'Name: ' + ${vacinetype.name}"/>
+                <td th:text="'Data: ' + ${vacinetype.date}"/>
+                <td th:text="'Numeros: ' + ${vacinetype.num}"/>
+            </tr>
+        </table>
+    </body>
+</html>

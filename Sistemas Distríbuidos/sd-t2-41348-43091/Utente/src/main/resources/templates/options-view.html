@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Utente</title>
+        <link th:href="@{/public/style/index.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <h2>Escolha uma das opções</h2>
+
+        <form class="form-inline" th:action="@{/centers}" method="GET">
+            <label for="name">Consultar centros de vacinação ativos:</label><br>
+            <button name="ok" value="ok">ok</button>
+
+        </form>
+
+        <form class="form-inline" th:action="@{/agendamento.html}" method="GET">
+            <label for="name">Fazer agendamento:</label><br>
+            <button name="ok" value="ok">ok</button>
+
+        </form>
+
+
+            <p>Notificacoes</p>
+                <table>
+                    <tr th:each="notificacao: ${notificationslist}">
+                        <td th:text="${notificacao.message}"/>
+                    </tr>
+                </table>
+    </body>
+</html>

@@ -1,0 +1,20 @@
+#img_produto {
+    float: left;
+    width: 300px;
+}
+
+#produto h2,
+#payment,
+#produto button {
+    margin: 10px 50px;
+}
+
+#produto input[type=number] {
+    width: 45px;
+}
+
+#icons_pagamento {
+    float: right;
+    width: 450px;
+    height: 150px;
+}

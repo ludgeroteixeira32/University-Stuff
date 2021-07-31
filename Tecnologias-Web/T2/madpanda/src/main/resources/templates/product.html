@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <title>MadPanda</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" media="screen" href="frontend/font/HortaFont.otf" type="text/css" />
+  <link rel="stylesheet" href="frontend/stylesheet.css">
+</head>
+
+
+<body class="info">
+
+  <p id="name">Mad Panda</p>
+  
+  <div id="cabecalho">
+    <img src="frontend/img/madpanda.png" alt="madpanda" onclick="document.location='/index'">
+    <form action="index.html" method="POST">
+      <input type="text" placeholder="Pesquisar...">
+      <input type="image" src="frontend/img/lupa.png" alt="pesquisar">
+    </form>
+    <a href="/advanced-search">Pesquisa Avançanda</a>
+  </div>
+
+
+  <div id="content">
+    <div id="produto">
+      
+      <h3>Steelseries QCK XXL</h3>
+      <a href="frontend/img/tapete_qck_xxl.png">
+      <img id="img_produto" src="frontend/img/tapete_qck_xxl.png" alt="tapete_qck_xxl">
+      </a>
+      <div id="descricao">
+        <p>O QcK XXL é um tapete de alto desempenho de enormes dimensões. Ele usa o mesmo material da premiada série QcK só que num tamanho muito maior.</p>
+        <p>O tapete QcK tem uma base de borracha antiderrapante que impede que o tapete se mova durante o uso. A base de borracha também fornece um conforto adicional para a sua mão e pulso em todos os momentos.</p>
+        <p>A superfície de pano do QcK fornece uma superfície de deslizamento suave e constante para os jogadores.</p>  
+        <p>A série QcK da SteelSeries passou por testes intensivos de jogadores profissionais que garantem que a série QcK fornece aos utilizadores uma superfície estável para ótima funcionalidade do seu rato.</p>
+        <p>Dimensões: Espessura: 4 mm Largura: 900 mm Comprimento: 400 mm</p>
+        <p id="payment">Portes de envio: 5 €</p>
+        <p id="payment">Data prevista para entrega: 30/11/2020</p>
+        <p id="payment">Quantidade:
+        <input type="number" min="0" alt="quantidade">
+        </p>
+        <h2 class="preco">39,90 €</h2>
+        <button class="btn_comprar" type="button">Comprar</button>
+        <img id="icons_pagamento" src="frontend/img/icons_pagamento.png" alt="icons_pagamento">
+      </div>
+    </div>
+
+
+
+    <div id="categoria">
+      <h3>Categorias:</h3>
+      <ul>
+        <li><a href="#">Tapetes</a></li>
+        <li><a href="#">Ratos</a></li>
+        <li><a href="#">Teclados</a></li>
+        <li><a href="#">Cabos</a></li>
+        <li><a href="#">Armazenamento</a></li>
+      </ul>
+    </div>
+  </div>
+
+
+  <div id="about">
+    <a href="#">About this page...</a>
+    <p>
+  </div>
+</body>
+
+</html>

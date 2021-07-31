@@ -1,0 +1,21 @@
+    <!DOCTYPE html>
+    <html>
+        <head>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Utente</title>
+            <link th:href="@{/public/style/index.css}" rel="stylesheet" />
+        </head>
+        <body>
+
+
+            <p>Lista de centros</p>
+                <table>
+                    <tr th:each="centros: ${centerList}">
+                        <td th:text="'Centros: ' + ${centros.name}"/>
+                        <td th:text="'Capacidade: ' + ${centros.capacity}"/>
+                    </tr>
+                </table>
+
+        </body>
+    </html>
+    

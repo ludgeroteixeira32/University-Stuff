@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Utente</title>
+        <link th:href="@{/public/style/index.css}" rel="stylesheet" />
+    </head>
+    <body>
+        <h2>Faça o seu agendamento</h2>
+
+            <form class="form-inline" th:action="@{/agendamento}" method="GET">
+
+                <label for="name">Insira o seu nome:</label><br>
+                <input type="text" id="name" name="name" value="nome"><br>
+
+                <label for="age">Insira a sua idade:</label><br>
+                <input type="text" id="age" name="age" value="idade"><br>
+
+                <label for="email">Insira o seu email:</label><br>
+                <input type="text" id="email" name="email" value="email"><br>
+
+                <label for="center">Centro:</label><br>
+                <input type="text" id="center" name="center" value="centro"><br>
+
+                <label for="date">Data preferida:</label><br>
+                <input type="date" id="date" name="date" value="2020-07-22" min="2020-01-01" max="2034-12-31">
+
+                <input type="submit" value="Submeter">
+            </form> 
+
+    </body>
+</html>

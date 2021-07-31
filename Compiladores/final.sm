@@ -1,0 +1,276 @@
+.data
+
+dots: .space 1
+spaces: .space 1
+temp_spaces: .space 1
+temp_dots: .space 1
+.text
+program:
+	PUSH start
+	JUMP
+pot:
+	PUSH 0
+	LINK
+	PUSH 1
+	LOCAL
+	LOAD
+	PUSH L3
+	SWAP
+	SKIPZ
+	JUMP
+	POP
+	PUSH 1
+	PUSH 4
+	LOCAL
+	STORE
+	UNLINK
+	JUMP
+L3:
+	PUSH 0
+	PUSH 3
+	LOCAL
+	LOAD
+	PUSH 2
+	LOCAL
+	LOAD
+	PUSH 1
+	LOCAL
+	LOAD
+	PUSH 1
+	SUB
+	PUSH pot
+	CALL
+	POP
+	POP
+	POP
+	PUSH 3
+	LOCAL
+	LOAD
+	MUL
+	PUSH 4
+	LOCAL
+	STORE
+	UNLINK
+	JUMP
+fact:
+	PUSH 0
+	LINK
+	PUSH 1
+	LOCAL
+	LOAD
+	DUP
+	PUSH L1
+	SWAP
+	SKIPZ
+	JUMP
+	POP
+	POP
+	PUSH 1
+	PUSH 2
+	LOCAL
+	STORE
+	UNLINK
+	JUMP
+L1:
+	DUP
+	PUSH 0
+	SWAP
+	PUSH 1
+	SUB
+	PUSH fact
+	CALL
+	POP
+	MUL
+	PUSH 2
+	LOCAL
+	STORE
+	UNLINK
+	JUMP
+abs:
+	PUSH 0
+	LINK
+	PUSH 0
+	PUSH 1
+	LOCAL
+	LOAD
+	SLT
+	PUSH LendABS
+	SWAP
+	SKIPZ
+	JUMP
+	POP
+	PUSH -1
+	PUSH 1
+	LOCAL
+	LOAD
+	MUL
+	PUSH 2
+	LOCAL
+	STORE
+	UNLINK
+	JUMP
+LendABS:
+	PUSH 1
+	LOCAL
+	LOAD
+	PUSH 2
+	LOCAL
+	STORE
+	UNLINK
+	JUMP
+start:
+	PUSH 1
+	PUSH dots
+	STORE
+	PUSH 30
+	PUSH spaces
+	STORE
+L0start:
+	PUSH spaces
+	LOAD
+	PUSH 0
+	SWAP
+	SUB
+	PUSH 0
+	SLT
+	PUSH L0do
+	SWAP
+	SKIPZ
+	JUMP
+	POP
+	PUSH L0end
+	JUMP
+L0do:
+	PUSH spaces
+	LOAD
+	PUSH temp_spaces
+	STORE
+L1start:
+	PUSH temp_spaces
+	LOAD
+	PUSH 0
+	SWAP
+	SUB
+	PUSH 0
+	SLT
+	PUSH L1do
+	SWAP
+	SKIPZ
+	JUMP
+	POP
+	PUSH L1end
+	JUMP
+L1do:
+	PUSH 32
+	PUSH print_char
+	CALL
+	POP
+	PUSH temp_spaces
+	LOAD
+	PUSH 1
+	SUB
+	PUSH temp_spaces
+	STORE
+PUSH L1start
+	JUMP
+L1end:
+	PUSH dots
+	LOAD
+	PUSH temp_dots
+	STORE
+L2start:
+	PUSH temp_dots
+	LOAD
+	PUSH 0
+	SWAP
+	SUB
+	PUSH 0
+	SLT
+	PUSH L2do
+	SWAP
+	SKIPZ
+	JUMP
+	POP
+	PUSH L2end
+	JUMP
+L2do:
+	PUSH 46
+	PUSH print_char
+	CALL
+	POP
+	PUSH temp_dots
+	LOAD
+	PUSH 1
+	SUB
+	PUSH temp_dots
+	STORE
+PUSH L2start
+	JUMP
+L2end:
+	PUSH 10
+	PUSH print_char
+	CALL
+	POP
+	PUSH dots
+	LOAD
+	PUSH 2
+	ADD
+	PUSH dots
+	STORE
+	PUSH spaces
+	LOAD
+	PUSH 1
+	SUB
+	PUSH spaces
+	STORE
+PUSH L0start
+	JUMP
+L0end:
+	PUSH 29
+	PUSH spaces
+	STORE
+L3start:
+	PUSH spaces
+	LOAD
+	PUSH 0
+	SWAP
+	SUB
+	PUSH 0
+	SLT
+	PUSH L3do
+	SWAP
+	SKIPZ
+	JUMP
+	POP
+	PUSH L3end
+	JUMP
+L3do:
+	PUSH 32
+	PUSH print_char
+	CALL
+	POP
+	PUSH spaces
+	LOAD
+	PUSH 1
+	SUB
+	PUSH spaces
+	STORE
+PUSH L3start
+	JUMP
+L3end:
+	PUSH 69
+	PUSH print_char
+	CALL
+	POP
+	PUSH 78
+	PUSH print_char
+	CALL
+	POP
+	PUSH 68
+	PUSH print_char
+	CALL
+	POP
+	PUSH 10
+	PUSH print_char
+	CALL
+	POP

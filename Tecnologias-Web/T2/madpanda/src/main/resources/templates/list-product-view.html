@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+      xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>MadPanda</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" media="screen" href="frontend/font/HortaFont.otf" type="text/css" />
+    <link rel="stylesheet" href="frontend/stylesheet.css">
+</head>
+<body>
+
+    <div id="cabecalho">
+        <img src="frontend/img/madpanda.png" alt="madpanda" onclick="document.location='/index'">
+        <p id="name">Mad Panda</p>
+    </div>
+    <div id="produto">
+        <div id="alinhamento">
+            <div id="viewproduto">
+                <table>
+                    <tr th:each="Product: ${ProductList}">
+                        <form th:action="@{/del-product}" method="get">
+                            <input type="hidden" th:name="id" th:value="${Product.id}"/>
+                            <h3 th:text=" ${Product.name}"/>
+                            <img th:src="${Product.image}"/>
+                            <p th:text="${Product.details}"/>
+                            <h2 th:text="${Product.price} + '€'"/>
+                            <input class="btn_comprar" id="btn_remove" type="submit" value="Delete"/>
+                        </form>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

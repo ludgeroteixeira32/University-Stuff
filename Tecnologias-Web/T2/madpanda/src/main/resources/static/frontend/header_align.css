@@ -1,0 +1,31 @@
+#name{
+    position: center;
+    top: 150px;
+    left: auto;
+}
+
+#cabecalho{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#alinhamento,
+#viewproduto{
+    margin-top: 50px;
+    height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.size{
+    font-size: 50px;
+}
+
+#viewproduto img{
+    width: 227px;
+    height: 227px;
+}
